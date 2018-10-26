@@ -85,8 +85,8 @@
                 </div>
             </div>
         </div><!--/#main-nav-->
+    </div>
 </header><!--/#home-->
-
 
 <!-- One -->
 <section id="one" class="wrapper style1">
@@ -103,31 +103,31 @@
         <div class="inner">
             {% for do in what_we_do %}
                 {% if not do.id|divisibleby:2 %}
-                     <article class="feature left">
-            <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
-            <div class="content">
-             <h2>{{ do.title }}</h2>
-          <p>{{ do.details }}</p>
-              <ul class="actions">
-                <li>
-                  <a href="#" class="button alt">More</a>
-                </li>
-              </ul>
-            </div>
-          </article>
+                    <article class="feature left">
+                        <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
+                        <div class="content">
+                            <h2>{{ do.title }}</h2>
+                            <p>{{ do.details }}</p>
+                            <ul class="actions">
+                                <li>
+                                    <a href="#" class="button alt">More</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
                 {% else %}
-                     <article class="feature right">
-            <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
-            <div class="content">
-             <h2>{{ do.title }}</h2>
-          <p>{{ do.details }}</p>
-              <ul class="actions">
-                <li>
-                  <a href="#" class="button alt">More</a>
-                </li>
-              </ul>
-            </div>
-          </article>
+                    <article class="feature right">
+                        <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
+                        <div class="content">
+                            <h2>{{ do.title }}</h2>
+                            <p>{{ do.details }}</p>
+                            <ul class="actions">
+                                <li>
+                                    <a href="#" class="button alt">More</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
                 {% endif %}
             {% endfor %}
         </div>
@@ -193,20 +193,20 @@
         </div>
     </div>
     {% for info in projects %}
-    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
-        <div class="portfolio-thumb">
-{#            {% for image in project_images %}#}
-{#                {% if image.id == project.id %}#}
-                    <img src="{{ info.image.url}}" class="img-responsive" alt="portfolio img 1">
-{#                {% endif %}#}
-{#                {% endfor %}#}
-            <div class="portfolio-overlay">
-                <h4>{{ info.title }}</h4>
-                <p>{{ info.details }}</p>
-                <a href="projects.html" class="btn btn-default">DETAIL</a>
+        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+            <div class="portfolio-thumb">
+                {#            {% for image in project_images %}#}
+                {#                {% if image.id == project.id %}#}
+                <img src="{{ info.image.url}}" class="img-responsive" alt="portfolio img 1">
+                {#                {% endif %}#}
+                {#                {% endfor %}#}
+                <div class="portfolio-overlay">
+                    <h4>{{ info.title }}</h4>
+                    <p>{{ info.details }}</p>
+                    <a href="projects.html" class="btn btn-default">DETAIL</a>
+                </div>
             </div>
         </div>
-    </div>
 
     {% endfor %}
 </section><!--/#portfolio-->9+
@@ -221,36 +221,36 @@
         <div class="team-members">
             <div class="row">
                 {% for member in team %}
-                <div class="col-sm-3">
-                    <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
-                        <div class="member-image">
-                            <img class="img-responsive" src="{{ member.image.url }}" alt="team">
-                            <p class="bio"><b>Bio</b></p>
-                            <div class="overlay">
-                                <div class="text">
-                                    <div class="ex3">{{ member.bio }}</div>
+                    <div class="col-sm-3">
+                        <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <div class="member-image">
+                                <img class="img-responsive" src="{{ member.image.url }}" alt="team">
+                                <p class="bio"><b>Bio</b></p>
+                                <div class="overlay">
+                                    <div class="text">
+                                        <div class="ex3">{{ member.bio }}</div>
 
+                                    </div>
                                 </div>
+
+
                             </div>
-
-
-                        </div>
-                        <div class="member-info">
-                            <h3>{{ member.name }}</h3>
-                            <h4>{{ member.position }}</h4>
-                            <p>{{ member.email }}</p>
-                        </div>
-                        <div class="social-icons">
-                            <ul>
-                                <li><a class="facebook" href="{{ member.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="twitter" href="{{ member.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a class="linkedin" href="{{ member.instagram }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a class="dribbble" href="{{ member.linkedin }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a class="rss" href="{{ member.skype }}" target="_blank"><i class="fa fa-rss"></i></a></li>
-                            </ul>
+                            <div class="member-info">
+                                <h3>{{ member.name }}</h3>
+                                <h4>{{ member.position }}</h4>
+                                <p>{{ member.email }}</p>
+                            </div>
+                            <div class="social-icons">
+                                <ul>
+                                    <li><a class="facebook" href="{{ member.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="{{ member.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="linkedin" href="{{ member.instagram }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a class="dribbble" href="{{ member.linkedin }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a class="rss" href="{{ member.skype }}" target="_blank"><i class="fa fa-rss"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
 
             </div>
@@ -299,33 +299,33 @@
 
 <section id="lab" class="parallax">
     <div>
-      <a class="lab-left-control" href="#lab-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-      <a class="lab-right-control" href="#lab-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-            <div class="text-center">
+        <a class="lab-left-control" href="#lab-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="lab-right-control" href="#lab-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="text-center">
 
-              <h4>Themeum</h4>
+                        <h4>Themeum</h4>
+                    </div>
+                    <div id="lab-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                            </div>
+                            <div class="item">
+                                <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                            </div>
+                            <div class="item">
+                                <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="lab-carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="item active wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
-                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
-                </div>
-                <div class="item">
-                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
-                </div>
-                <div class="item">
-                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section><!--/#lab-->
+</section><!--/#lab-->
 
 <section id="blog">
     <div class="container">
@@ -370,7 +370,7 @@
                 <div id="2" class="tab-content">
                     <h2>Nini kinafanyika katika mradi wa Ramani huria katika mitaro?</h2>
                     <p id="2">Mradi wa Ramani Huria awamu ya pili (RH 2.0) unaendeleza kwa namna ya kipekee jitihada za kusaidia wanajamii kuwa wastahimilivu wa janga la mafuriko katika mkoa wa Dar es salaam. Mradi huu unahusika na ukusanyaji wa taarifa mbalimbali kama Makazi, Miundombinu, Athari za mafuriko na visababishi vyake. Taarifa zote hizi zinakusanywa na wanajamii pamoja na wanafuzi wa vyuo mbalimbali hususani chuo kikuu Ardhi kwa kutumia teknolojia ya kawaida kabisa kama simu ya mkononi (smartphone) na vifaa kama futi kamba, fimbo iliyo wekwa vipimo (measuring rods), tochi, na vioo (kuangalia mitaro iliyo funikwa). Taarifa hizi zinakusanywa kupitia programu ya mfumo wa simu (android) iliyowekwa programu ya Open Data Kit (ODK) iliyoboreshwa kwaajili ya kukusanya taarifa mbalimbali. </p>
-                    <img src="{% static "images/Picture3.png" %}" class="odk" alt "muonekano wa odk">
+                    <img src="{% static "images/Picture3.png" %}" class="odk" alt = "muonekano wa odk">
                     <p>Muonekano wa program
                         u ya ODK katika ukusanyaji wa taarifa na  Timu ya ukusanyaji taarifa wakiwa kazini
                     </p>
@@ -424,21 +424,31 @@
             <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <div class="row">
                     <div class="col-sm-6">
-                        <form id="main-contact-form" name="contact-form" method="post" action="#">{% csrf_token %}
+                        <form name="contact-form" method="post">{% csrf_token %}
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <div class="form-status alert alert-success">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
                             <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" id = "name" class="form-control" placeholder="Name" required="required">
+                                        <input type="text" name="name"  class="form-control" placeholder="Name" required="required">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" id = "email" class="form-control" placeholder="Email Address" required="required">
+                                        <input type="email" name="email"  class="form-control" placeholder="Email Address" required="required">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required="required">
+                                <input type="text" name="subject"  class="form-control" placeholder="Subject" required="required">
                             </div>
                             <div class="form-group">
                                 <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import *
@@ -11,10 +12,11 @@ def home_view(request):
     email = request.POST.get('email', '')
     if name and subject and message and email:
         try:
-            send_mail(subject, message, email, ['abisaimsizilo@gmail.com'])
+            send_mail(subject, message, email, ['abisaimsizilo@gmail.com', 'nnkogift@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return HttpResponseRedirect('')
+        messages.success(request, "Your Message has been successfully sent!")
+        return HttpResponseRedirect('#contact')
 
     open_map = AboutOpenMap.objects.first()
     what_we_do = WhatWeDo.objects.filter()

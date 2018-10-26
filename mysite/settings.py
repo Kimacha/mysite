@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'abisaimsizilo@gmail.com'
-EMAIL_HOST_PASSWORD = 'saved by his stripes'
+EMAIL_HOST_USER = 'nnkogift@gmail.com'
+EMAIL_HOST_PASSWORD = 'gianttallY'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -39,6 +39,8 @@ EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
