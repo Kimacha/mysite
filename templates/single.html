@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>
+            {{ post.tittle }}
+        </h1>
+        {% if post.image %}
+            <img src="{{ post.image.url }}">
+        {% endif %}
+        <p>{{ post.content }}</p>
+    </body>
+</html>

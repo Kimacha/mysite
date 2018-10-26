@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+{% for post in object_list %}
+    <h1>{{ post.tittle }}</h1>
+    {% if post.image %}
+        <img src="{{ post.image.url }}">
+    {% endif %}
+    <p>{{ post.content }}</p>
+    <a href="{% url 'single_r' id=post.id %}">Read more...</a>
+    <hr>
+{% endfor %}
+
+
+
+</body>
+</html>

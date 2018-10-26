@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #028fcc;
+  position: fixed;
+  width: 100%
+
+}
+.topnav  h3{
+  float: left;
+  color: #fff;
+  font-family: Aclonica; 
+  font-weight: bold;
+
+}
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #0272a3;
+  color: black;
+}
+
+.active {
+  background-color: #0272a3;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+/***********
+*************
+**************things*****
+*****************
+***********/
+  .things {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    margin-bottom: 6em;
+  }
+
+    .things:last-child {
+      margin-bottom: 2em;
+    }
+
+    .things.left {
+      -moz-flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    .things.right {
+      -moz-flex-direction: row-reverse;
+      -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+    }
+
+    .things .image {
+      width: 48%;
+    }
+
+      .things .image img {
+        max-width: 100%;
+      }
+
+    .things .content {
+      padding: 2em 3em 0.1em 3em;
+      width: 52%;
+    }
+
+    @media screen and (max-width: 1280px) {
+
+      .things {
+        margin-bottom: 4em;
+      }
+
+        .things .content {
+          padding: 1em 2em 0.1em 2em;
+        }
+
+    }
+
+    @media screen and (max-width: 980px) {
+
+      .things.left, .things.right {
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+
+      .things .image {
+        width: 100%;
+      }
+
+        .things .image img {
+          width: 100%;
+        }
+
+      .things .content {
+        padding: 2em 2em 0.1em 2em;
+        width: 100%;
+      }
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+      .things {
+        margin-bottom: 2em;
+      }
+
+        .things .content {
+          padding: 2em 1em 0.1em 1em;
+        }
+
+    }
+
+  .things {
+    background-color: rgba(144, 144, 144, 0.075);
+  }

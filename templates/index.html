@@ -1,0 +1,506 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>OpenMap Developmetn Tanzania</title>
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/animate.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/lightbox.css" %}" rel="stylesheet">
+    <link href="{% static "css/main.css" %}" rel="stylesheet">
+    <link id="css-preset" href="{% static "css/presets/preset1.css" %}" rel="stylesheet">
+    <link href="{% static "css/responsive.css" %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="{% static "images/OMDTZ-logo.png" %}">
+</head><!--/head-->
+
+<body>
+
+<header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active" style="background-image: url({% static "images/slider/homepage1.jpg" %})">
+                <div class="caption">
+
+                    <h1 class="animated fadeInLeftBig"><img class="logo" src="{% static "images/OMDTZ-logo.png" %}" alt="logo">OpenMap Development <span>Tanzania</span></h1>
+                    <div  class="camp_name animated fadeInUpBig">Communinity, Technology and Innovation </div>
+                    <p class="animated fadeInRightBig">.....in solving socity problems..</p>
+
+                </div>
+            </div>
+            <div class="item" style="background-image: url({% static "images/slider/homepage2.jpg" %})">
+                <div class="caption">
+                    <h1 class="animated fadeInLeftBig">Empower <span>Community</span></h1>
+                    <p class="animated fadeInRightBig">.......in Cartographic tools and Skills</p>
+                </div>
+            </div>
+            <div class="item" style="background-image: url({% static "images/slider/homepage3.jpg" %})">
+                <div class="caption">
+                    <h1 class="animated fadeInLeftBig">easy <span>access</span></h1>
+                    <p class="animated fadeInRightBig">.......to technology</p>
+
+                </div>
+            </div>
+
+            <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+            <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+            <a id="tohash" href="#services"><i class="fa fa-angle-down"></i></a>
+
+        </div><!--/#home-slider-->
+        <div class="main-nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <h3>OpenMap Development Tanzania.</h3>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="scroll active"><a href="#home">Home</a></li>
+                        <li class="scroll"><a href="#about-us">About Us</a></li>
+                        <li class="scroll"><a href="#portfolio">Projects</a></li>
+                        <li class="scroll"><a href="#team">Team</a></li>
+                        <li class="scroll"><a href="#library">Library</a></li>
+                        <li class="scroll"><a href="#blog">Blog</a></li>
+                        <li class="scroll"><a href="#contact">Contact</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div><!--/#main-nav-->
+</header><!--/#home-->
+
+
+<!-- One -->
+<section id="one" class="wrapper style1">
+    <div class="container">
+        <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="row">
+                <div class="text-center col-sm-8 col-sm-offset-2">
+                    <h2>What we do</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            {% for do in what_we_do %}
+                {% if not do.id|divisibleby:2 %}
+                     <article class="feature left">
+            <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
+            <div class="content">
+             <h2>{{ do.title }}</h2>
+          <p>{{ do.details }}</p>
+              <ul class="actions">
+                <li>
+                  <a href="#" class="button alt">More</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+                {% else %}
+                     <article class="feature right">
+            <span class="image"><img src="{{ do.image.url }}" alt="" /></span>
+            <div class="content">
+             <h2>{{ do.title }}</h2>
+          <p>{{ do.details }}</p>
+              <ul class="actions">
+                <li>
+                  <a href="#" class="button alt">More</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section id="about-us" class="parallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <h2>About us</h2>
+                    <h4>Who are we?</h4>
+                    {#     <p>Openstreetmap is a collaboration organization aiming of creating a free editable map of the world. The creation and growth of openstreetmap has been motivated by restraction on use or availability of map information across much of the world and the advent of inexpensive portable satellite navigation devices.</p>#}
+                    {##}
+                    {#<p>A person may use a Map on a daily basis, whether when driving through the day, navigating public transportion or walking unfamiliar streets, and finally come to realize that map helps us to reach our destination in the most efficient way. As openstreetmap grow popularity, it will allows you to list your business location information. Once listed your business becomes visible and accessible. If your business has a strong online pressure interested customers will find it much easier to locate your business that will hopefully visit and probably the Map to find.</p>#}
+                    {##}
+                    {#<p>Creating an inspiring outlook fuels a journey of discovery. Through grouping locations or by being  able to drill down further into a specific location,  mapping encourages further discovery and interaction, but this can only work to a person who is having a clear knowledge on Mapping and ability to read and understand the mapping languages.Therefore,  absence of mapping knowledge can be a cause of development backwardness.</p>#}
+                    {##}
+                    {#<p>The mapping knowledge is very important and beneficial to Tanzanian community since it builds the development team. The mapping process always builds a common understanding and shared ownership of the plan, incorporating ideas insights from team member representing many functions involved in a succeful developmentprocess.</p>#}
+                    {##}
+                    {##}
+                    {#<p>Affimming that our organization will work  tirelessly in solidarity with progressive organizations in any country in the world to achieve community, social, and economic responsibility among Tanzanians, we do firmly and solemnly resolve to provide for ourselves a consistitution of the above named Non-profit and Non-political organization and governed by the prevision therein.</p>#}
+                    {##}
+                    {#<p>The non-governmental organization to be known as OPENMAP DEVELOPMENT TANZANIA shall be a non profit, non partisan, autonomous organization which shall be organized locally at both grassroots and national levels.#}
+                    {#</p>#}
+                    <p> {{ open_map.about_us }}</p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="our-skills wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <h4>Mission</h4>
+                    {#               <p>Organization's mission is to have a vibrant Tanzania community which is united, organized, growing to assist, and get involved in national and global developmentgoals via maps.</p>#}
+                    <p>{{ open_map.mission }}</p>
+                    <h4>Vision</h4>
+                    {#                   <p>  Organizaton envision for Open Data, Open Source, and applyng these principles to assist organizations and individuals locally, and internationally to manage and solve social, economic and community challenges.</p>#}
+                    <p>{{ open_map.vision }}</p>
+                    <h4>Objectives</h4>
+                    <p>{{ open_map.objectives | linebreaks }}</p>
+                    {#                   <p>The objectives for which organization is established are to:<ol class="obj">#}
+                    {#                    <li>To rise awareness of the community on the mapping and maps throughout Tanzania.</li>#}
+                    {#                    <li>To enable training and capacity building that will enable individuals and organizations to manage social, economic and community challenges.</li>#}
+                    {#                    <li>To enable creation of opportunities for members of the community to engage in global sustainable development initiatives.</li>#}
+                    {#                    <li>To promote innovations from community members that will provide solutions to challenges in their communities for social and economic developments.</li>#}
+                    {#                    <li>Take part and facilitate mapping initiatives in the community, Africa and the global community.</li>#}
+                    {#                    <li>Provide community with education on Open Street Map and Open Data.</li>#}
+                    {#                    <li>Empower community in cartographic tools and skills to business, universities, government agencies and different organization.</li>#}
+                    {#                   </ol></p>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#about-us-->
+
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <h2>Our Projects</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            </div>
+        </div>
+    </div>
+    {% for info in projects %}
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
+        <div class="portfolio-thumb">
+{#            {% for image in project_images %}#}
+{#                {% if image.id == project.id %}#}
+                    <img src="{{ info.image.url}}" class="img-responsive" alt="portfolio img 1">
+{#                {% endif %}#}
+{#                {% endfor %}#}
+            <div class="portfolio-overlay">
+                <h4>{{ info.title }}</h4>
+                <p>{{ info.details }}</p>
+                <a href="projects.html" class="btn btn-default">DETAIL</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</section><!--/#portfolio-->9+
+<section id="team">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <h2>OpenMap Development Tanzania Team</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            </div>
+        </div>
+        <div class="team-members">
+            <div class="row">
+                {% for member in team %}
+                <div class="col-sm-3">
+                    <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+                        <div class="member-image">
+                            <img class="img-responsive" src="{{ member.image.url }}" alt="team">
+                            <p class="bio"><b>Bio</b></p>
+                            <div class="overlay">
+                                <div class="text">
+                                    <div class="ex3">{{ member.bio }}</div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="member-info">
+                            <h3>{{ member.name }}</h3>
+                            <h4>{{ member.position }}</h4>
+                            <p>{{ member.email }}</p>
+                        </div>
+                        <div class="social-icons">
+                            <ul>
+                                <li><a class="facebook" href="{{ member.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="{{ member.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="linkedin" href="{{ member.instagram }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="dribbble" href="{{ member.linkedin }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a class="rss" href="{{ member.skype }}" target="_blank"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section><!--/#team-->
+
+<section id="features" class="parallax">
+    <div class="container">
+        <div class="row count">
+            <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <i class="fa fa-user"></i>
+                <h3 class="timer">4000</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <i class="fa fa-desktop"></i>
+                <h3 class="timer">200</h3>
+                <p>Modern Websites</p>
+            </div>
+            <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="700ms">
+                <i class="fa fa-trophy"></i>
+                <h3 class="timer">10</h3>
+                <p>WINNING AWARDS</p>
+            </div>
+            <div class="col-sm-3 col-xs-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="900ms">
+                <i class="fa fa-comment-o"></i>
+                <h3>24/7</h3>
+                <p>Fast Support</p>
+            </div>
+        </div>
+    </div>
+</section><!--/#features-->
+
+<section id="library">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <h2>Our Library</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            </div>
+        </div>
+
+    </div>
+</section><!--/#library-->
+
+<section id="lab" class="parallax">
+    <div>
+      <a class="lab-left-control" href="#lab-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="lab-right-control" href="#lab-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="text-center">
+
+              <h4>Themeum</h4>
+            </div>
+            <div id="lab-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="item active wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                </div>
+                <div class="item">
+                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                </div>
+                <div class="item">
+                  <p>Introducing Shortcode generator for Helix V2 based templates <a href="#"><span>#helixframework #joomla</span> http://bit.ly/1qlgwav</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#lab-->
+
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <h2>Blog Posts</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="column side link">
+                <ul>
+                    <li id="ls1"><a href="#">data zetu</a></li>
+                    <li id="ls2"><a href="#">Utengenezaji wa Ramani za Mitaro</a></li>
+                </ul>
+
+
+            </div>
+            <div class="column middle">
+                <div id="1" class="tab-content">
+                    <h2>Kufanya kazi na wana jamii katika kukusanya taarifa kwenye maeneo yao.</h2>
+                    <p>Mradi wa Data Zetu ni moja ya miradi inayolenga kuwapa uwezo viongozi na wadau mbalimbali wanaotumia taarfa kufanya maamuzi kwa ajili ya faida ya jamii yao hususani kuokoa maisha.
+                        Katika kufanikisha hili mradi unawapa nafasi wanajamii kuhusika katika zoezi kuanzia kuchangia mada nini kinawasumbua na kinaitaji utatuzi, tatizo lipi lianze kutatuliwa kwenye jamii yao ili kuweze kuwanufaisha wao na wadau wanaoweza tatua tatizo hilo kwa kufanya maamuzi sahihi kuptia taarifa.
+                    </p>
+                    <h2>Kitu kilicho wafurahisha jamii katika zoezi zima la ukusanyaji wa taarifa</h2>
+                    <p>Ukusanyaji wa taarifa mara nyingi huwa unawahusisha watu wenye taaluma kuhusiana na ukusanyaji wa taarifa. Hii imekuwa tofauti kwa HOT kwani imekuwa ikifanya kazi na wanajimii wenyewe kukusanya taarifa kwenye maeneo yao husika, kwa kutumia vifaa vyao wenywe (simu) na elimu ndogo ya ukusanyaji wa taarifa kutoka kwa timu ya HOT. Zoezi hili limefanikiwa kwa kiasi kikubwa sana kwa kuwa taarifa zote zilizokusanywa katika mradi huu zilikusanywa na wananchi kwa kushirikiana na viongozi wa mtaa na wanajamii wa eneo hilo.</p>
+
+                    <img src="{% static "images/Picture1.png" %}" class="wanajamii" alt="picha ya wanajamii">
+
+                    <img src="{% static "images/Picture2.png" %}" class="wanajamii_1" alt="picha ya wanajamii">
+                    <p>Wanajamii wakikusanya taarifa.</p>
+                    <h2>Maoni kutoka kwa wananchi walioshiriki zoezi la ukusanyaji wa taarifa.</h2>
+                    <p>“Nimejifunza teknologia mpya ambayo sikuweza kujua kama simu yangu inaweza kusaidia jamii yangu kuishi vizuri” Halima Juma- Mwananchi Makangarawe</p>
+
+                    <p>“Nikiwa kama kiongozi hili zoezi litanisaidia kujua tatizo la eneo langu kiundani zaidi na kama wakitokea wafadili nitajua nini kipewe kipaumbele”. Hamisi Mashaka Mjumbe Yombo Dovya</p>
+
+                    <p>“Zoezi hili naomba liwe endelevu maana linawapa nafasi hususani vijana kushiriki kazi za maendeleo ya jamii yao”. Reah Mohamed- Mjumbe, serikali ya Mtaa Makangarawe</p>
+
+                    <p>“Huu ni mtaa wangu nina uhakika nikienda kumuuliza maswali mwananchi mwenzangu tutapata majibu sahihi kwani watakuwa huru na anayewahoji kwani ni mmoja wa watu wanaomzunguka” Mohamed- Mwananchi, Mtaa wa Dovya
+                    </p>
+                </div>
+                <div id="2" class="tab-content">
+                    <h2>Nini kinafanyika katika mradi wa Ramani huria katika mitaro?</h2>
+                    <p id="2">Mradi wa Ramani Huria awamu ya pili (RH 2.0) unaendeleza kwa namna ya kipekee jitihada za kusaidia wanajamii kuwa wastahimilivu wa janga la mafuriko katika mkoa wa Dar es salaam. Mradi huu unahusika na ukusanyaji wa taarifa mbalimbali kama Makazi, Miundombinu, Athari za mafuriko na visababishi vyake. Taarifa zote hizi zinakusanywa na wanajamii pamoja na wanafuzi wa vyuo mbalimbali hususani chuo kikuu Ardhi kwa kutumia teknolojia ya kawaida kabisa kama simu ya mkononi (smartphone) na vifaa kama futi kamba, fimbo iliyo wekwa vipimo (measuring rods), tochi, na vioo (kuangalia mitaro iliyo funikwa). Taarifa hizi zinakusanywa kupitia programu ya mfumo wa simu (android) iliyowekwa programu ya Open Data Kit (ODK) iliyoboreshwa kwaajili ya kukusanya taarifa mbalimbali. </p>
+                    <img src="{% static "images/Picture3.png" %}" class="odk" alt "muonekano wa odk">
+                    <p>Muonekano wa program
+                        u ya ODK katika ukusanyaji wa taarifa na  Timu ya ukusanyaji taarifa wakiwa kazini
+                    </p>
+
+                    <h2>Namna gani taarifa hizi zinakusanywa?
+                    </h2>
+                    <p>Taarifa zote zinazohusiana na mitaro zinakusanywa katika zoezi hili na kutumwa katika mfumo maalumu kwaajili ya kusafishwa na kutumika katika maamuzi mbalimbali kama kutengeneza “model” ya mafuriko katika jiji la Dar es Salaam ambayo itaonyesha mwenendo wa maji endapo mvia itanyesha na wap mafuriko yatatokea kulingana na aina ya mitaro iliyopo.
+                        Baadhi ya taarifa zinazokusanywa ni pamoja upana, urefu wa mtaro na vipimo vingine kama mwinuko kutoka usawa wa barabara (elevation), nyenzo zilizotumika kutengeneza mtaro (Materials), hali ya mtaro (drainage condition/smoothness) na taarifa nyingine nyingi. Pia aina nyingine ya taarifa ni sehemu zenye matatizo katika mitaro kama uchafu, sehemu zilizohariibika, mitaro iliyofukiwa na mengine mengi.
+                    </p>
+                    <img src="{% static "images/Picture4.png" %}" class="odk" alt="picha ya vifaa">
+                    <p>Matumizi ya vifaa katika zoezi la ukusanyaji taarifa</p>
+                    <h2>Nini matumizi ya taarifa hizi?</h2>
+                    <p>Namna hii ya ukusanyaji wa taarifa unaweza kufanywa na mtu yoyote kutegemea na matumizi yake. Hivi karibuni wanafunzi wa chuo kikuu Ardhi wametumia njia hii ya ukusanyaji wa taarifa zitakazowawezesha kufanya “drain design” katika mji wa Moshi. Mradi wa Ramani Huria utawezesha taarifa hizi kutumika katika namna tofauti tofauti kama kuandaa ramani ya kuonyesha hali ya mitaro na uelekeo wa maji, pia kujua sehemu zenye matatizo kuwezesha mashirika ya kijamii na serikali katika kufanya maamuzi ya kuisaidia jamii kustahimili maafa.
+                    </p>
+                    <img src="{% static "images/Picture5.png" %}" class="wanajamii" alt="picha ya wanajamii">
+
+                    <img src="{% static "images/Picture6.png" %}" class="wanajamii_1" alt="picha ya wanajamii">
+                    <p>Data kabla na baada ya kusafishwa na kutengeneza ramani</p>
+                    <h2>Mwisho wa mradi nini kitafanyika?
+                    </h2>
+                    <p>
+                        Mradi huu tayari umefanikiwa kukusanya taarifa katika kata 20 za jiji la Dar es salaam zinazoonyesha taarifa zote za mitaro na mahali ambapo kuna matatizo tayari kwa ajili ya matumizi katika mbalimbali. Zoezi hili litakamilika baada ya kukusanya taarifa katika kata 44 ambazo ziko kwenye mradi. Mwisho wa mradi itapatikana “model” itakayoonyesha namna mitaro inavyo onekena katika kata husika mpaka yanapoishia, iwe mtoni au kumwagika katika makazi ya watu.
+
+
+                    </p>
+                    <p>
+                        Taarifa hizi zinakusanywa kwa umahiri wa namna mbalimbali, hii ni kutokana na usimamizi wa ukusanyaji data na usafishwaji wa taarifa kwa timu yenye uzoefu wakishirikina na mtaalam wa masuala ya maji kutoka Deltares Uholanzi katika kuhakikisha taarifa hizi zinakua bora na zenye manufaa kwa jamii.
+                    </p>
+                    <img src="{% static "images/Picture4.png" %}" class="odk" alt="picha ya data">
+                    <p>Namna ya kuangalia data zilizokusanywa kimakosa ili kuzirekebisha</p>
+                </div>
+
+            </div>
+            <div class="column side">
+                <a class="twitter-timeline" data-width="306" data-height="1500" href="https://twitter.com/HOTTanzania?ref_src=twsrc%5Etfw">Tweets by HOTTanzania</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+
+    </div>
+</section><!--/#blog-->
+
+<section id="contact">
+    <div id="contact-us" class="parallax">
+        <div class="container">
+            <div class="row">
+                <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <h2>Contact Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+                </div>
+            </div>
+            <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form id="main-contact-form" name="contact-form" method="post" action="#">{% csrf_token %}
+                            <div class="row  wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" id = "name" class="form-control" placeholder="Name" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id = "email" class="form-control" placeholder="Email Address" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required="required">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="submit" class="btn-submit">Send Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="contact-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                            <ul class="address">
+                                <li><i class="fa fa-map-marker"></i> <span> Address:</span>mikocheni</li>
+                                <li><i class="fa fa-phone"></i> <span> Phone:</span> +928 336 2000  </li>
+                                <li><i class="fa fa-envelope"></i> <span> Email:</span><a href="mailto:someone@yoursite.com"> omdt@gmail.com</a></li>
+                                <li><i class="fa fa-globe"></i> <span> Website:</span> <a href="#">www.omdt.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#contact-->
+<footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <p>OpenMap Development Tanzania.</p>
+            </div>
+
+            <div class="social-icons">
+                <ul>
+                    <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="
+                    instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="end">
+                <p>copyright &copy; OMDTZ 2018.</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="{% static "js/jquery.inview.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/wow.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/mousescroll.js" %}"></script>
+<script type="text/javascript" src="{% static "js/smoothscroll.js" %}"></script>
+<script type="text/javascript" src="{% static "js/jquery.countTo.js" %}"></script>
+<script type="text/javascript" src="{% static "js/lightbox.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/main.js" %}"></script>
+
+</body>
+
+</html>
