@@ -18,3 +18,11 @@ class AboutOpenMapAdmin(admin.ModelAdmin):
 admin.site.register(models.AboutOpenMap, AboutOpenMapAdmin)
 admin.site.register(models.OurProjects)
 admin.site.register(models.TeamMembers)
+admin.site.register(models.Phrase)
+admin.site.register(models.Library)
+admin.site.register(models.WhatWeDoPhrase)
+admin.site.register(models.ProjectPhrase)
+admin.site.register(models.TeamPhrase)
+admin.site.register(models.LibraryPhrase)
+admin.site.register(models.BlogPhrase)
+

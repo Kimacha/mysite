@@ -24,7 +24,7 @@
 
 <div class="topnav" id="myTopnav">
     <h3>OpenMap Development Tanzania</h3>
-    <a href="index.html" >Home</a>
+    <a href="{% url 'OpenMap:home' %}" >Home</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
@@ -42,30 +42,27 @@
             </div>
         </div>
         <div class="inner">
-            <article class="things left">
-                <span class="image"><img src="{% static "images/IMG_8466.jpg" %}" alt="" /></span>
-                <div class="content">
-                    <h2>Intensive Thinking.</h2>
-                    <p>hapa ndipo maelezo ya ndani kuhusu project yanakaa kutokea kule kwenye page mama ya OpenMap Devolopment Tanzania. happa ndo utajua undani wa yale yanoyofanyika katika OpenMap Devolopment Tanzania, utaona picha mbalimbali za project pamoja na washiriki wahhizo project, picha vitendea kazi bila kusahau picha za ramani ambazo hizi ndo kikubwa sana kinachofanywa na OpenMap Devolopment Tanzania. Maswali na jumbe mbalimbali unaweza kuacha kwenye kurasa mama ya OpenMap Devolopment Tanzania ili kupata msaada na ufafanuzi zaidi kutoka kwa wataalamu wetu mahiri katika maswala ya ramani. jisikie huru kujiunga na kazi hii pia au kuchangia chochote kuendeleza kazi hii.</p>
+                       {% for things in project %}
+                {% if not things.id|divisibleby:2 %}
+                    <article class="feature left">
+                        <span class="image"><img src="{{ things.image.url }}" alt="" /></span>
+                        <div class="content">
+                            <h2>{{ things.title }}</h2>
+                            <p>{{ things.content }}</p>
 
-                </div>
-            </article>
-            <article class="things right">
-                <span class="image"><img src="{% static "images/IMG_8466.jpg" %}" alt="" /></span>
-                <div class="content">
-                    <h2>Intensive Thinking</h2>
-                    <p>hapa ndipo maelezo ya ndani kuhusu project yanakaa kutokea kule kwenye page mama ya OpenMap Devolopment Tanzania. happa ndo utajua undani wa yale yanoyofanyika katika OpenMap Devolopment Tanzania, utaona picha mbalimbali za project pamoja na washiriki wahhizo project, picha vitendea kazi bila kusahau picha za ramani ambazo hizi ndo kikubwa sana kinachofanywa na OpenMap Devolopment Tanzania. Maswali na jumbe mbalimbali unaweza kuacha kwenye kurasa mama ya OpenMap Devolopment Tanzania ili kupata msaada na ufafanuzi zaidi kutoka kwa wataalamu wetu mahiri katika maswala ya ramani. jisikie huru kujiunga na kazi hii pia au kuchangia chochote kuendeleza kazi hii.</p>
+                        </div>
+                    </article>
+                {% else %}
+                    <article class="feature right">
+                        <span class="image"><img src="{{ things.image.url }}" alt="" /></span>
+                        <div class="content">
+                            <h2>{{ things.title }}</h2>
+                            <p>{{ things.content }}</p>
 
-                </div>
-            </article>
-            <article class="things left">
-                <span class="image"><img src="{% static "images/IMG_8466.jpg" %}" alt="" /></span>
-                <div class="content">
-                    <h1>Intensive Thinking</h1>
-                    <p>hapa ndipo maelezo ya ndani kuhusu project yanakaa kutokea kule kwenye page mama ya OpenMap Devolopment Tanzania. happa ndo utajua undani wa yale yanoyofanyika katika OpenMap Devolopment Tanzania, utaona picha mbalimbali za project pamoja na washiriki wahhizo project, picha vitendea kazi bila kusahau picha za ramani ambazo hizi ndo kikubwa sana kinachofanywa na OpenMap Devolopment Tanzania. Maswali na jumbe mbalimbali unaweza kuacha kwenye kurasa mama ya OpenMap Devolopment Tanzania ili kupata msaada na ufafanuzi zaidi kutoka kwa wataalamu wetu mahiri katika maswala ya ramani. jisikie huru kujiunga na kazi hii pia au kuchangia chochote kuendeleza kazi hii</p>
-
-                </div>
-            </article>
+                        </div>
+                    </article>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -91,7 +88,7 @@
             </div>
 
             <div class="end">
-                <p>copyright &copy; OMDTZ 2018.</p>
+                <p>copyright &copy; OMDTZ 2018. All Rights Reserved.</p>
 
             </div>
         </div>

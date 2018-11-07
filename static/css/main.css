@@ -491,11 +491,11 @@ start portfolio
       position: absolute;
       bottom: 100%;
       top:0;
-      left: 0;
+      left: 15px;
       right: 0;
       background-color: #F5F3E9;
       overflow: hidden;
-      width: 100%;
+      width: 90%;
       height:0;
       transition: .5s ease;
       opacity: 0.9;
@@ -503,14 +503,14 @@ start portfolio
 
   .member-image:hover .overlay {
       top: 0;
-      height: 47vh;
+      height: 42vh;
     }
 
     .text {
       color: black;
       font-size: 12px;
       position: absolute;
-      top: 43%;
+      top: 48%;
       left: 55%;
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -522,8 +522,9 @@ start portfolio
     .bio{
       padding-left: 5px;
       padding-right: 5px;
-      position: absolute;top: 2px;
-      right: 2px;
+      position: absolute;
+      top: 2px;
+
       border: thin solid grey;
       border-radius: 30%;
     }
@@ -616,7 +617,7 @@ start portfolio
 **************************/
 #features {
   text-align: center;
-  background-image: url(../images/features-bg.jpg);
+  background-image: url(../images/IMG-20180911-WA0028.jpg);
 }
 
 #features i {
@@ -635,6 +636,7 @@ start portfolio
 }
 
 
+
 /*************************
 *****library****
 **************************/
@@ -644,7 +646,7 @@ start portfolio
 ********Twitter CSS*******
 **************************/
 #lab {
-  background-image: url(../images/twitter-bg.jpg);
+  background-image: url(../images/drainage.jpg);
 }
 
 #lab > div {

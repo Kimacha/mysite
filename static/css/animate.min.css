@@ -1095,6 +1095,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -webkit-transform: translateX(-20px);
     transform: translateX(-20px);
   }
+  @-webkit-keyframes fadeInCenter {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
 
   100% {
     opacity: 1;

@@ -60,3 +60,102 @@ class TeamMembers(models.Model):
     class Meta:
         verbose_name_plural = "Team members"
         verbose_name = "Team Member"
+
+
+class Phrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+
+class Library(models.Model):
+    title = models.CharField(max_length=128)
+    content = models.TextField()
+    link = models.URLField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "Libraries"
+        verbose_name = "Library"
+
+
+class projectPage(models.Model):
+    title = models.CharField(max_length=128)
+    image = models.ImageField()
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = "project page"
+        verbose_name = "project page"
+
+
+class WhatWeDoPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "WhatWeDoPhrase"
+        verbose_name = "WhatWeDoPhrase"
+
+
+class ProjectPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "ProjectPhrase"
+        verbose_name = "ProjectPhrase"
+
+
+class TeamPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "TeamPhrase"
+        verbose_name = "TeamPhrase"
+
+
+class LibraryPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "LibraryPhrase"
+        verbose_name = "LibraryPhrase"
+
+
+class BlogPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "BlogPhrase"
+        verbose_name = "BlogPhrase"
+
+
+class ContactPhrase(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    class Meta:
+        verbose_name_plural = "ContactPhrase"
+        verbose_name = "ContactPhrase"
